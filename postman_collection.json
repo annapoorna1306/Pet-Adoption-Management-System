@@ -1,0 +1,570 @@
+{
+  "info": {
+    "_postman_id": "pet-adoption-api-collection",
+    "name": "Pet Adoption Management System API",
+    "description": "Complete REST API collection for Pet Adoption Management System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Pets",
+      "item": [
+        {
+          "name": "Add Pet",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Buddy\",\n  \"species\": \"Dog\",\n  \"breed\": \"Golden Retriever\",\n  \"age\": 3,\n  \"healthStatus\": \"Healthy\",\n  \"shelterId\": \"shelter_001\",\n  \"adoptionStatus\": \"available\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/pets",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "pets"]
+            }
+          }
+        },
+        {
+          "name": "Get All Pets",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/pets",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "pets"]
+            }
+          }
+        },
+        {
+          "name": "Get Pet by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/pets/{{petId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "pets", "{{petId}}"]
+            }
+          }
+        },
+        {
+          "name": "Get Pets by Species",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/pets/species/Dog",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "pets", "species", "Dog"]
+            }
+          }
+        },
+        {
+          "name": "Get Pets by Status",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/pets/status/available",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "pets", "status", "available"]
+            }
+          }
+        },
+        {
+          "name": "Update Pet",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Buddy Updated\",\n  \"healthStatus\": \"Vaccinated\",\n  \"age\": 4\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/pets/{{petId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "pets", "{{petId}}"]
+            }
+          }
+        },
+        {
+          "name": "Delete Pet",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8080/api/pets/{{petId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "pets", "{{petId}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Adopters",
+      "item": [
+        {
+          "name": "Add Adopter",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"phone\": \"555-0123\",\n  \"address\": \"123 Main St, Springfield, USA\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/adopters",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "adopters"]
+            }
+          }
+        },
+        {
+          "name": "Get All Adopters",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/adopters",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "adopters"]
+            }
+          }
+        },
+        {
+          "name": "Get Adopter by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/adopters/{{adopterId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "adopters", "{{adopterId}}"]
+            }
+          }
+        },
+        {
+          "name": "Update Adopter",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"phone\": \"555-0124\",\n  \"address\": \"456 Oak Ave, Springfield, USA\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/adopters/{{adopterId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "adopters", "{{adopterId}}"]
+            }
+          }
+        },
+        {
+          "name": "Delete Adopter",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8080/api/adopters/{{adopterId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "adopters", "{{adopterId}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Shelters",
+      "item": [
+        {
+          "name": "Add Shelter",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Happy Paws Shelter\",\n  \"address\": \"789 Animal St, Pet City, USA\",\n  \"phone\": \"555-5678\",\n  \"email\": \"info@happypaws.com\",\n  \"capacity\": 50\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/shelters",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "shelters"]
+            }
+          }
+        },
+        {
+          "name": "Get All Shelters",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/shelters",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "shelters"]
+            }
+          }
+        },
+        {
+          "name": "Get Shelter by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/shelters/{{shelterId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "shelters", "{{shelterId}}"]
+            }
+          }
+        },
+        {
+          "name": "Get Pets in Shelter",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/shelters/{{shelterId}}/pets",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "shelters", "{{shelterId}}", "pets"]
+            }
+          }
+        },
+        {
+          "name": "Update Shelter",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"capacity\": 60,\n  \"phone\": \"555-5679\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/shelters/{{shelterId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "shelters", "{{shelterId}}"]
+            }
+          }
+        },
+        {
+          "name": "Delete Shelter",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8080/api/shelters/{{shelterId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "shelters", "{{shelterId}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Veterinarians",
+      "item": [
+        {
+          "name": "Add Veterinarian",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Dr. Jane Smith\",\n  \"specialization\": \"Small Animals\",\n  \"clinicAddress\": \"321 Vet Lane, Pet City, USA\",\n  \"phone\": \"555-9999\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/veterinarians",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "veterinarians"]
+            }
+          }
+        },
+        {
+          "name": "Get All Veterinarians",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/veterinarians",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "veterinarians"]
+            }
+          }
+        },
+        {
+          "name": "Get Veterinarian by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/veterinarians/{{vetId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "veterinarians", "{{vetId}}"]
+            }
+          }
+        },
+        {
+          "name": "Update Veterinarian",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"specialization\": \"Large & Small Animals\",\n  \"phone\": \"555-9998\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/veterinarians/{{vetId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "veterinarians", "{{vetId}}"]
+            }
+          }
+        },
+        {
+          "name": "Delete Veterinarian",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8080/api/veterinarians/{{vetId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "veterinarians", "{{vetId}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Adoptions",
+      "item": [
+        {
+          "name": "Create Adoption Record",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"petId\": \"{{petId}}\",\n  \"adopterId\": \"{{adopterId}}\",\n  \"adoptionDate\": \"2024-06-18T10:30:00\",\n  \"status\": \"pending\",\n  \"notes\": \"Initial adoption record created\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/adoptions",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "adoptions"]
+            }
+          }
+        },
+        {
+          "name": "Process Adoption",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"petId\": \"{{petId}}\",\n  \"adopterId\": \"{{adopterId}}\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/adoptions/process",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "adoptions", "process"]
+            }
+          }
+        },
+        {
+          "name": "Get All Adoptions",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/adoptions",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "adoptions"]
+            }
+          }
+        },
+        {
+          "name": "Get Adoption by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/adoptions/{{adoptionId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "adoptions", "{{adoptionId}}"]
+            }
+          }
+        },
+        {
+          "name": "Get Adoptions by Pet ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/adoptions/pet/{{petId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "adoptions", "pet", "{{petId}}"]
+            }
+          }
+        },
+        {
+          "name": "Get Adoptions by Adopter ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/adoptions/adopter/{{adopterId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "adoptions", "adopter", "{{adopterId}}"]
+            }
+          }
+        },
+        {
+          "name": "Update Adoption Record",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"completed\",\n  \"notes\": \"Adoption completed successfully\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/adoptions/{{adoptionId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "adoptions", "{{adoptionId}}"]
+            }
+          }
+        },
+        {
+          "name": "Delete Adoption Record",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8080/api/adoptions/{{adoptionId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "adoptions", "{{adoptionId}}"]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "petId",
+      "value": ""
+    },
+    {
+      "key": "adopterId",
+      "value": ""
+    },
+    {
+      "key": "shelterId",
+      "value": ""
+    },
+    {
+      "key": "vetId",
+      "value": ""
+    },
+    {
+      "key": "adoptionId",
+      "value": ""
+    }
+  ]
+}

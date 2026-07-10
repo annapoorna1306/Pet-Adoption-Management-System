@@ -1,0 +1,59 @@
+# Compiled class files
+*.class
+*.jar
+*.war
+*.ear
+*.log
+
+# Maven build directory
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# IDE files - IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+*.tmp
+*.bak
+
+# NetBeans
+nbproject/
+nbactions.xml
+nb-configuration.xml
+
+# System files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Application specific
+application.properties
+application-local.properties
+application-dev.properties
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
